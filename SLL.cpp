@@ -110,6 +110,25 @@ class linkedlist{
         N=N->next;
         }
     }
+    
+    void reverse()
+	{
+		IntSLLNode<t> *temp1 = head;
+		IntSLLNode<t> *temp2 = NULL;
+		IntSLLNode<t> *next = NULL;
+				
+		while(temp1!=NULL)
+		{
+			next = temp1->next;
+			temp1->next = temp2;
+			temp2 = temp1;
+			temp1 = next;
+		}
+		
+		head = temp2;
+		traverse();
+					
+	}
 
 };
 int main()
@@ -148,6 +167,7 @@ int main()
    cout<<"\n";
    a.addatend(3);
    a.display();
+   a.reverse();
 
 
 
